@@ -1,0 +1,147 @@
+/*==================
+Main header
+==================*/
+
+header {
+  background: url("../images/image-hero-mobile.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: var(--FULL-WIDTH);
+  height: 35vh;
+  position: relative;
+}
+
+.header-items {
+  position: relative;
+  width: var(--CALC-WIDTH);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: var(--PM-XL);
+  margin: 0 auto;
+  color: var(--WHITE);
+}
+
+.title {
+  font-size: var(--FS-XXL);
+}
+
+.weight {
+  font-weight: var(--FW-BOLD);
+}
+
+.header-items img {
+  cursor: pointer;
+}
+
+ul {
+  display: none;
+}
+
+ul li {
+  cursor: pointer;
+}
+
+ul li:hover {
+  text-decoration: underline;
+  text-underline-offset: 1em;
+}
+
+/*=====================
+Mobile Menu
+=====================*/
+
+.menu-items {
+  width: var(--FULL-WIDTH);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--WHITE);
+}
+
+.menu-items img {
+  cursor: pointer;
+}
+
+.mobile-menu-modal {
+  position: absolute;
+  top: 350%;
+  width: var(--FULL-WIDTH);
+}
+
+.mobile-menu-modal a{
+  width: inherit;
+  height: 4em;
+  background-color: var(--WHITE);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: var(--PM-XL);
+  text-decoration: none;
+  color: var(--BLACK);
+  font-weight: var(--FW-BOLD);
+  font-size: var(--FS-XL);
+  transition: 0.15s;
+}
+
+.mobile-menu-modal a:first-child {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom: 1px solid var(--LIGHT-GRAY);
+}
+
+.mobile-menu-modal a:nth-child(2) {
+  border-bottom: 1px solid var(--LIGHT-GRAY);
+}
+
+.mobile-menu-modal a:last-child {
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.mobile-menu-modal a:active {
+  background: var(--LIGHT-CYAN);
+  color: var(--WHITE);
+}
+
+@keyframes slideDown {
+  0% {
+    top: -900%;
+  }
+
+  100% {
+    top: 350%;
+  }
+}
+
+@media screen and (min-width: 780px) {
+  header {
+    background-image: url("../images/image-hero-desktop.jpg");
+    background-size: 35vh cover;
+    background-position-x: center ;
+  }
+
+  .header-items img {
+    display: none;
+  }
+  
+  ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    gap: 2em;
+    min-width: 18em;
+  }
+}
+
+@media screen and (min-width: 1140px) {
+  header {
+    background-size: cover;
+  }
+
+  .header-items {
+    width: calc(100% - 30%);
+  }
+}
+
+

@@ -1,0 +1,135 @@
+/*==============
+First Section
+==============*/
+
+.logo {
+  width: 13%;
+  max-width: 60px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.first-section__title {
+  font-size: var(--FS-XXL);
+  margin: var(--PM-NORMAL) auto 0 auto;
+  width: 13em;
+}
+
+.button-bookmark {
+  display: flex;
+  justify-content: space-between;
+  gap: 2em;
+  position: relative;
+}
+
+.btn-color {
+  background-color: var(--LIGHT-CYAN);
+  border: none;
+  color: var(--WHITE);
+  font-weight: var(--FW-BOLD);
+  cursor: pointer;
+}
+
+.btn-color:active {
+  background-color: var(--DARK-CYAN);
+}
+
+.size {
+  width: 15em;
+  border-radius: 40px;
+}
+
+.bookmark-icon {
+  cursor: pointer;
+}
+
+.bookmark-field {
+  display: none;
+}
+
+@media screen and (min-width: 780px) {
+  .first-section__title {
+    width: var(--FULL-WIDTH);
+  }
+
+  .btn-color:hover,
+  .btn-color:focus {
+    background-color: var(--DARK-CYAN);
+  }
+
+  .bookmark-icon {
+    margin-right: 8.5em;
+    z-index: 1;
+  }
+
+  .bookmark-field {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 12em;
+    padding-right: 1.8em;
+    border-radius: 40px;
+    background-color: var(--LIGHT-GRAY);
+    color: var(--DARK-GRAY);
+    font-weight: var(--FW-BOLD);
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+}
+
+/*==========================
+Second Section
+==========================*/
+
+.stats {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  width: var(--FULL-WIDTH);
+}
+
+.total {
+  font-size: 2rem;
+  font-weight: var(--FW-BOLD);
+  margin-bottom: 0.3em;
+}
+
+.small-line {
+  border-bottom: 1px solid var(--LIGHT-GRAY);
+  width: 25%;
+  max-width: 7em;
+  margin: 2em auto 0 auto;
+}
+
+.progress-bar-outer {
+  width: var(--FULL-WIDTH);
+  height: 10px;
+  background-color: var(--LIGHT-GRAY);
+  border-radius: 20px;
+}
+
+.progress-bar-inner {
+  height: 100%;
+  background-color: var(--LIGHT-CYAN);
+  border-radius: 20px;
+}
+
+@media screen and (min-width: 780px) {
+  .stats {
+    flex-direction: row;
+    gap: 5em;
+  }
+
+  .small-line {
+    display: none;
+  }
+
+  .border {
+    border-right: 2px solid var(--LIGHT-GRAY);
+    padding-right: 4em;
+  }
+}

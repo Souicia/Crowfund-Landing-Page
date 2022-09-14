@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;700&display=swap');
+
+:root {
+  /* Colors */
+  --LIGHT-CYAN: hsl(176, 50%, 47%);
+  --DARK-CYAN: hsl(176, 72%, 28%);
+  --BLACK: black;
+  --BLACK-BG-OPACITY: hsla(0, 0%, 0%, 0.5);
+  --WHITE: white;
+  --DARK-GRAY: hsl(0, 0%, 48%);
+  --LIGHT-GRAY: hsl(0, 0%, 85%);
+
+  /* Sizes, FS = font-size, FW = font-weight */
+  --FS-NORMAL: 1rem;
+  --FS-XL: 1.1rem;
+  --FS-XXL: 1.5rem;
+  --FW-BOLDER: 500;
+  --FW-BOLD: 700;
+  --CALC-WIDTH: calc(100% - 15%);
+  --FULL-WIDTH: 100%;
+
+  /*padding, margins*/
+  --PM-SMALL: 0.5em;
+  --PM-NORMAL: 1em;
+  --PM-XL: 1.5em;
+  --PM-XXL: 2em;
+}
+
+* {
+  font-family: 'Commissioner', sans-serif;
+  font-size: 16px;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  position: relative;
+  min-height: 100vh;
+}
+
+.overlay {
+  position: absolute;
+  width: var(--FULL-WIDTH);
+  height: 100%;
+  background-color: var(--BLACK-BG-OPACITY);
+  z-index: 2;
+}
+
+.display-off {
+  display: none;
+}
+
+main {
+  width: var(--CALC-WIDTH);
+  max-width: 850px;
+  margin: -3em auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3em;
+}
+
+.first-section,
+.second-section {
+  text-align: center;
+}
+
+.first-section,
+.second-section,
+.third-section {
+  width: var(--FULL-WIDTH);
+  position: relative;
+  background-color: var(--WHITE);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  border: none;
+  border-radius: 15px;
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+
+.descr {
+  color: var(--DARK-GRAY);
+  line-height: 1.5em;
+  font-weight: var(--FW-BOLDER);
+}
+
+
+.header-mobile-menu,
+.main-menu {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  width: var(--CALC-WIDTH);
+}
+
+.header-mobile-menu {
+  top: 0.86%;
+}
