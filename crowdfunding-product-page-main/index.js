@@ -64,20 +64,22 @@ if (!localStorage.getItem('moneyRaised')) {
   totalRaised.textContent = "$" + JSON.parse(localStorage.getItem('moneyRaised'))
 }
 let smallPledgesLeft = 2
-if (!localStorage.getItem('smallPledges')) {
+if (localStorage.getItem('smallPledges')) {
+  smallPledgesLeft = JSON.parse(localStorage.getItem('smallPledges'))
+  smallPledgeAmountHTML.textContent = `${smallPledgesLeft}`
+  smallTierAmount.textContent = JSON.parse(localStorage.getItem('smallPledges'))
+}else {
   smallPledgeAmountHTML.textContent = `${smallPledgesLeft}`
   smallTierAmount.textContent = `${smallPledgesLeft}`
-}else {
-  smallPledgeAmountHTML.textContent = JSON.parse(localStorage.getItem('smallPledges'))
-  smallTierAmount.textContent = JSON.parse(localStorage.getItem('smallPledges'))
 }
 let mediumPledgesLeft = 2
-if (!localStorage.getItem('mediumPledges')) {
+if (localStorage.getItem('mediumPledges')) {
+  mediumPledgesLeft = JSON.parse(localStorage.getItem('mediumPledges'))
+  mediumPledgeAmountHTML.textContent = `${mediumPledgesLeft}`
+  mediumTierAmount.textContent = JSON.parse(localStorage.getItem('mediumPledges'))
+}else {
   mediumPledgeAmountHTML.textContent = `${mediumPledgesLeft}`
   mediumTierAmount.textContent = `${mediumPledgesLeft}`
-}else {
-  mediumPledgeAmountHTML.textContent = JSON.parse(localStorage.getItem('mediumPledges'))
-  mediumTierAmount.textContent = JSON.parse(localStorage.getItem('mediumPledges'))
 }
 let bookmarked = false
 let tierSelected = false
@@ -130,18 +132,21 @@ closePledgeMenu.addEventListener('click', () => {
 
 // arrow function when user choose tier or click section 3 buttons
 const selectingTierLevel = (tierLevel, pledgeAmount, selector) => {
-  if (!tierSelected) {
+  //The reason you have to doubleclick is because you are
+  //- setting tierselected to true. I don't think there's 
+  //any reason for this so i removed it
+  // if (!tierSelected) {
     document.getElementById('main-pledge-menu').classList.remove('display-off')
     document.getElementById(tierLevel).style.border = "1px solid var(--LIGHT-CYAN)"
     document.getElementById(pledgeAmount).classList.remove('display-off')
     document.getElementById(selector).classList.remove('display-off')
-    tierSelected = true
-  } else {
-    document.getElementById(tierLevel).style.border = "1px solid var(--LIGHT-GRAY)"
-    document.getElementById(pledgeAmount).classList.add('display-off')
-    document.getElementById(selector).classList.add('display-off')
-    tierSelected = false
-  }
+    // tierSelected = true
+  // } else {
+  //   document.getElementById(tierLevel).style.border = "1px solid var(--LIGHT-GRAY)"
+  //   document.getElementById(pledgeAmount).classList.add('display-off')
+  //   document.getElementById(selector).classList.add('display-off')
+  //   tierSelected = false  
+  // }
 }
 
 //The two buttons on section 3 of the landing page to open the main menu on the right pledge
